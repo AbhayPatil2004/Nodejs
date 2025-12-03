@@ -4,12 +4,15 @@ const url = require('url')
 
 const server = http.createServer( ( req , res ) => {
 
+    if( req.method === "GET" ){
+        res.end( "Get rquest")
+    }
     // fs.appendFile("./log.txt" , `${Date.now() , req.url}`)
     // console.log(req)
     // console.log( req.headers)
 
     const myUrl = url.parse( req.url , true )
-
+    console.log(req.method)
     console.log(myUrl)
     res.end("Hello from server")
 })
