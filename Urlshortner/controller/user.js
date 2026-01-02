@@ -25,8 +25,8 @@ async function handelUserLogin( req , res ) => {
     }
     const sessionId = uuid()
 
-    setUser( sessionId , user )
-    res.cookie('uid' , sessionId)
+    const token = setUser( user )
+    res.cookie('uid' , token)
     return res.render("home")
 
 }

@@ -1,5 +1,7 @@
 const { getUser } = require("../service/auth")
 
+
+
 async function allowLoginUser( req , res , next ){
 
     const userId = req.cookies.uid ;
@@ -15,7 +17,6 @@ async function allowLoginUser( req , res , next ){
 
     req.user = user ,
     next()
-
 }
 
 module.exports = {
